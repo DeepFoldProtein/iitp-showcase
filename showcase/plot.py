@@ -87,7 +87,7 @@ def plot_predicted_alignment_error(
     for n, (model_name, value) in enumerate(outs.items()):
         plt.subplot(1, num_models, n + 1)
         plt.title(model_name)
-        plt.imshow(value["pae"], label=model_name, cmap="bwr", vmin=0, vmax=30)
+        plt.imshow(value["predicted_aligned_error"], label=model_name, cmap="bwr", vmin=0, vmax=30)
         plt.colorbar()
     plt.savefig(result_dir.joinpath(jobname + "_PAE.png"))
     if show:
